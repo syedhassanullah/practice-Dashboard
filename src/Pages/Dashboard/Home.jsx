@@ -1,36 +1,113 @@
-// import { Col, Row, } from 'react-bootstrap';
-import './Home.css'
-
+import './Home.css';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Home = () => {
   return (
     <>
-      <div className="top">
-        <h1>
-          Dashboard
-        </h1>
-      </div>
-      <div className='middle'>
-        <div className='sec'>
-          <div className='minsec'></div>
-          <div className='minsec'></div>
+      <AnimatePresence>
+        <div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 1 }}
+            className="top"
+          >
+            <h1>Dashboard</h1>
+          </motion.div>
+
+          <div className='middle'>
+            <div className='sec'>
+              <motion.div
+                className='minsec'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+              <motion.div
+                className='minsec'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+            </div>
+
+            <motion.div
+              className='sec'
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.div
+                className='minsec'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+              <motion.div
+                className='minsec'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+              <motion.div
+                className='minsec'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+            </motion.div>
+          </div>
+
+          <div className='middle2'>
+            <motion.div
+              className='m2left'
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 1 }}
+            />
+
+            <motion.div
+              className='m2right'
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.8 }}
+              transition={{ duration: 1 }}
+            >
+              <motion.div
+                className='m2rightchild'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+              <motion.div
+                className='m2rightchild'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+              <motion.div
+                className='m2rightchild'
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 1 }}
+              />
+            </motion.div>
+          </div>
         </div>
-        <div className='sec'>
-          <div className='minsec'></div>
-          <div className='minsec'></div>
-          <div className='minsec'></div>
-        </div>
-      </div>
-      <div className='middle2'>
-        <div className='m2left'></div>
-        <div className='m2right'>
-          <div className='m2rightchild'></div>
-          <div className='m2rightchild'></div>
-          <div className='m2rightchild'></div>
-        </div>
-      </div>
+      </AnimatePresence>
     </>
-  )
+  );
 };
 
 export default Home;

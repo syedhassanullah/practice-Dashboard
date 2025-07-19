@@ -48,13 +48,13 @@
     .m2left{
         height: 100%;
         background:var(--primary-color) ;
-        width: 65%;
+        width: 83%;
         border-radius: 10px;
     }
 
     .m2right{
         height: 100%;
-        width: 33%;
+        width: 15%;
         /* background-color: aqua; */
         border-radius: 10px;
         display: flex;

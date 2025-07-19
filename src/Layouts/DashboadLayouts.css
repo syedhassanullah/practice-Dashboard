@@ -1,0 +1,41 @@
+body {
+  overflow-y: hidden;
+}
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background: var(--primary-color);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+
+.main-content {
+  flex: 1;
+
+  background-color: #02354d48;
+  /* overflow-y: scroll; */
+  overflow-y: hidden !important;
+  position: relative;
+}
+
+
+.main2 {
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 30px;
+
+  
+}
+

@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import ProtectedRoute from './Components/ProtectedRoute';
+import DashboardLayout from './Layouts/DashboardLayouts';
+import Home from './Pages/Dashboard/Home';
+import Profile from './Pages/Dashboard/Profile';
+import Settings from './Pages/Dashboard/Settings';
+import Login from './Pages/Login';
 
-function App() {
+const App = () => {
+  const isAuthenticated = true; // Replace with real auth logic
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <BrowserRouter>
+      <Routes>
+
+        <Route path="/login" element={<Login />} />
+
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Route index element={<Home />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="*" element={<h2>404 - Not Found</h2>} />
+
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

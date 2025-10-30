@@ -1,41 +1,254 @@
 body {
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 
+
 .dashboard-container {
-  display: flex;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .sidebar {
-  width: 200px;
-  background: var(--primary-color);
-  color: white;
-  padding: 20px;
+  height: 100vh;
+  transition: 0.3s ease all;
+  width: 18%;
+  padding: 0px;
 }
 
-.sidebar a {
+.sidebar-not-active {
+  transition: 0.3s ease all;
+  width: 6.8rem;
+}
+
+
+
+
+.sidebar-in .humburger {
+  text-align: right;
+}
+
+.hamburger-react {
+  right: 0 !important;
+}
+
+.humburger {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar-in {
+  background: var(--primary-color);
+  /* width: 100%; */
+  height: 100%;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border-radius: 30px; */
+}
+
+.sidebar ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.sidebar Li {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.sidebar Li .li-a {
   color: white;
   text-decoration: none;
-  display: block;
-  margin: 10px 0;
+  align-items: center;
+  display: flex;
+  display: inline-flex;
+  margin: 4px 0;
+  height: 52px;
+  /* padding: 12px 12px; */
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+  /* transition: 0.9s ease all; */
+  background-color: rgba(240, 248, 255, 0.103);
+  transform: scale(0.9);
+  position: relative;
+  font-size: 15px;
+  /* display: none; */
 }
+/* 
+.sidebar Li  .active{
+  color: white;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin: 4px 0;
+  height: 52px;
+  padding: 12px 12px;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+  transition: 0.5s ease all;
+  background-color: rgba(240, 248, 255, 0.103);
+  transform: scale(0.9);
+  font-size: 15px;
+  display: none;
+} */
+
+/* .sidebar Li .Li-always{
+  transition: 0.5s ease all;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+  display: flex;
+  display: inline-flex;
+  margin: 4px 0;
+  height: 52px;
+ 
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+
+  background-color: rgba(240, 248, 255, 0.103);
+  transform: scale(0.9);
+  position: relative;
+  font-size: 15px;
+  
+ 
+} */
+
+
+.sidebar li .Li-always {
+  position: relative;
+  transition: 0.5s ease all;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  height: 52px;
+  text-align: center;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(240, 248, 255, 0.103);
+  transform: scale(0.9);
+  font-size: 15px;
+  overflow: hidden; /* zaroori hai taake before/after overflow na kare */
+}
+
+/* .sidebar li .Li-always:hover{
+  transform: scale(1);
+} */
+
+/* 👇 Create before and after pseudo elements */
+.sidebar li .Li-always::before,
+.sidebar li .Li-always::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  border-radius: 5px;
+  transition: 0.5s;
+  z-index: -1;
+}
+
+/* 👇 Before gives glowing effect */
+.sidebar li .Li-always::before {
+  background: linear-gradient(45deg, rgba(0,167,255,0.5), rgba(0,255,167,0.4));
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+/* 👇 After gives dim background overlay */
+.sidebar li .Li-always::after {
+  background: rgba(0, 0, 0, 0.288);
+  opacity: 0;
+}
+
+/* 👇 On hover: animate both */
+.sidebar li .Li-always:hover::before {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: 0px 0px 12px 6px rgba(0, 167, 255, 0.18);
+}
+
+.sidebar li .Li-always:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+
+.sidebar Li .Li-always .icon {
+  position: absolute;
+  left: 20px;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+}
+.sidebar li .Li-always span {
+  position: absolute;
+  left: 35px;
+  opacity: 1;
+  transition: 0.5s ease all;
+}
+
+.sidebar li .Li-always .span1{
+  transition: 1.5s ease all;
+}
+
+.sidebar li .Li-always .span2{
+  transition: 1.8s ease all;
+}
+
+.sidebar li .Li-always .span3{
+  transition: 2.1s ease all;
+}
+
+.sidebar li .Li-always .span {
+  left: -120%;
+  opacity: 0;
+  transform: scale(0.0);
+}
+
+
+
+
+
+
+
+
+
+
+/* .sidebar Li .Li-always:hover {
+  background-color: rgba(0, 0, 0, 0.288);
+  transform: scale(1);
+  box-shadow: 0px 0px 12px 9px rgba(0, 167, 255, 0.18);
+  -webkit-box-shadow: 0px 0px 12px 9px rgba(0, 167, 255, 0.18);
+  -moz-box-shadow: 0px 0px 12px 9px rgba(0, 167, 255, 0.18);
+
+}
+ */
+
+
+
+
 
 .main-content {
   flex: 1;
-
-  background-color: #02354d48;
-  /* overflow-y: scroll; */
   overflow-y: hidden !important;
-  position: relative;
+  /* position: relative; */
 }
 
 
 .main2 {
   height: 100vh;
   overflow-y: scroll;
-  padding: 30px;
-
-  
+  padding: 40px 4%;
 }
-

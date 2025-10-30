@@ -5,106 +5,38 @@ const Home = () => {
   return (
     <>
       <AnimatePresence>
-        <div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.0 }}
-            transition={{ duration: 0.3 }}
-            className="top"
-          >
-            <h1>Dashboard</h1>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9  }}
+          animate={{ opacity: 1, scale: 1}}
+          exit={{ opacity: 0, }}
+          transition={{ duration: 0.5 }}
+        >
+          <div
+            className="top">
+            <h1>Syed hassan ullah </h1>
+          </div>
 
           <div className='middle'>
             <div className='sec'>
-              <motion.div
-                className='minsec'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.div
-                className='minsec'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
+              <motion.div className='minsec' />
+              <motion.div className='minsec' />
             </div>
 
-            <motion.div
-              className='sec'
-              initial={{ opacity: 0, scale: 0.0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                className='minsec'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.div
-                className='minsec'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.div
-                className='minsec'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
+            <div className='sec'>
+              <div className='minsec' />
+              <div className='minsec' />
+              <div className='minsec' />
+            </div>
           </div>
 
           <div className='middle2'>
-            <motion.div
-              className='m2left'
-              initial={{ opacity: 0, scale: 0.0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.0 }}
-              transition={{ duration: 0.3 }}
-            />
+            <div className='m2left' />
 
-            <motion.div
-              className='m2right'
-              initial={{ opacity: 0, scale: 0.0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <motion.div
-                className='m2rightchild'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.div
-                className='m2rightchild'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.div
-                className='m2rightchild'
-                initial={{ opacity: 0, scale: 0.0 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.div>
+            <div className='m2left' />
+            <div className='m2left' />
+
           </div>
-        </div>
+        </motion.div>
       </AnimatePresence>
     </>
   );

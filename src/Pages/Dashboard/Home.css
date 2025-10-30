@@ -1,15 +1,17 @@
 :root {
-    --primary-color: linear-gradient(126deg,rgba(2, 53, 77, 1) 38%, rgba(0, 20, 28, 1) 100%);
+    --primary-color: linear-gradient(126deg, rgba(2, 53, 77, 1) 38%, rgb(0, 33, 46) 100%);
 }
 
 
 .top {
-    background: var(--primary-color);
+    /* background: var(--primary-color); */
+    background: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815));
     width: auto;
-    padding: 40px 20px;
+    padding: 80px 20px;
     border-radius: 10px;
     color: aliceblue;
     text-transform: uppercase;
+    position: relative;
 }
 
 .middle {
@@ -39,23 +41,24 @@
 
 }
 
-.middle2{
+.middle2 {
     height: 450px;
     display: flex;
     justify-content: space-between;
-    gap:10px ;
-    
-    .m2left{
+    gap: 10px;
+
+    .m2left {
         height: 100%;
-        background:var(--primary-color) ;
-        width: 83%;
-        border-radius: 10px;
+        background: var(--primary-color);
+        width: 100%;
+        border-radius: 5px;
     }
 
-    .m2right{
+
+
+    /* .m2right{
         height: 100%;
         width: 15%;
-        /* background-color: aqua; */
         border-radius: 10px;
         display: flex;
         flex-direction: column;
@@ -68,5 +71,5 @@
             border-radius: 10px;
         }
 
-    }
+    } */
 }

@@ -37,7 +37,7 @@ const DashboardLayout = () => {
         {/* <div className={`m-0 p-0 ${isOpen ? 'active-sidebar' : ''}`}> */}
         <aside className={`sidebar ${isOpen ? '' : 'sidebar-not-active'}`}>
           <div className='sidebar-in'>
-            <div className='humburger'>
+            <div className={`hum ${isOpen ? 'humburger1' : 'humburger'}`}>
               <Hamburger
                 size={25}
                 duration={0.8}
@@ -50,15 +50,15 @@ const DashboardLayout = () => {
               {/* <h2>Admin Panel</h2> */}
               <nav>
                 <ul>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span1 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Dashboard</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard/profile"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard/settings"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span1 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Dashboard</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span1 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Dashboard</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
-                  <li><Link className={` Li-always li-a ${isOpen ? 'li-a' : ''} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span1 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Dashboard</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard/profile"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard/settings"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span1 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Dashboard</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span1 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Dashboard</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
+                  <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li>
 
                 </ul>
               </nav>

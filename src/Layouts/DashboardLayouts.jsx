@@ -1,9 +1,11 @@
 import { Outlet, Link } from 'react-router-dom';
 import './DashboadLayouts.css';
 import { Slant as Hamburger } from 'hamburger-react'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LuLayoutDashboard } from "react-icons/lu";
 import { motion } from 'framer-motion';
+import getmenus from '../APIs/MenuApi'
+import { menu } from 'framer-motion/client';
 // optional for styling
 // import { Container } from 'react-bootstrap';
 
@@ -31,15 +33,42 @@ const DashboardLayout = () => {
     }
   }
 
-  const menuItems = [
-    { name: "Dashboard", to: "/dashboard" },
-    { name: "Profile", to: "/dashboard/profile" },
-    { name: "Settings", to: "/dashboard/settings" },
-    { name: "Dashboard", to: "/dashboard" },
-    { name: "Profile", to: "/dashboard/profile" },
-    { name: "Settings", to: "/dashboard/settings" },
-  ];
 
+    const [Menu, setMenu] = useState([]);
+
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const data = await getmenus();
+          console.log("Menu API response:", data);
+          // setMenu(Array.isArray(data) ? data : []); 
+          setMenu(data)
+        } catch (error) {
+          console.error(error);
+        }
+
+      };
+      fetchData();
+    },[])
+
+    console.log(menu.Caption)
+
+
+
+
+
+  // const menuItems = [
+  //   { name: "Dashboard", to: "/dashboard" },
+  //   { name: "Profile", to: "/dashboard/profile" },
+  //   { name: "Settings", to: "/dashboard/settings" },
+  //   { name: "Dashboard", to: "/dashboard" },
+  //   { name: "Profile", to: "/dashboard/profile" },
+  //   { name: "Settings", to: "/dashboard/settings" },
+  // ];
+//  const [loaded, setLoaded] = useState(false);
+
+  // Trigger animation when Menu data arrives
+ 
   const listVariants = {
     hidden: {},
     visible: {
@@ -93,17 +122,17 @@ const DashboardLayout = () => {
                   <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
                   <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li> */}
 
-                  {menuItems.map((item, index) => (
-                    <motion.li key={index} variants={itemVariants}>
+                  {Menu.map((item, index) => (
+                    <motion.li key={item.sno} variants={itemVariants}>
                       <Link
                         className={`Li-always ${isOpen ? "Li-b" : "li-a"}`}
-                        to={item.to}
+                        to={item.url}
                       >
                         <div className="icon">
                           <LuLayoutDashboard />
                         </div>
                         <span className={`${isOpen ? "" : "span"}`}>
-                          &nbsp;&nbsp;{item.name}
+                          &nbsp;&nbsp;{item.caption}
                         </span>
                       </Link>
                     </motion.li>

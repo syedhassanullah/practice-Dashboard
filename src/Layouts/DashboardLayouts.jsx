@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { LuLayoutDashboard } from "react-icons/lu";
 import { motion } from 'framer-motion';
 import getmenus from '../APIs/MenuApi'
-import { menu } from 'framer-motion/client';
+// import { menu } from 'framer-motion/client';
 // optional for styling
 // import { Container } from 'react-bootstrap';
 
@@ -34,25 +34,38 @@ const DashboardLayout = () => {
   }
 
 
-    const [Menu, setMenu] = useState([]);
+  const [Menu, setMenu] = useState([]);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const data = await getmenus();
-          console.log("Menu API response:", data);
-          // setMenu(Array.isArray(data) ? data : []); 
-          setMenu(data)
-        } catch (error) {
-          console.error(error);
-        }
 
-      };
-      fetchData();
-    },[])
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getmenus();
+        setMenu(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
 
-    console.log(menu.Caption)
+  // const listVariants = {
+  //   hidden: {},
+  //   visible: {
+  //     transition: {
+  //       staggerChildren: 0.15,
+  //     },
+  //   },
+  // };
 
+  // const itemVariants = {
+  //   hidden: { opacity: 0, x: -40 },
+  //   visible: {
+  //     opacity: 1,
+  //     x: 0,
+  //     transition: { duration: 0.4, ease: "easeOut" },
+  //   },
+  // };
 
 
 
@@ -65,10 +78,10 @@ const DashboardLayout = () => {
   //   { name: "Profile", to: "/dashboard/profile" },
   //   { name: "Settings", to: "/dashboard/settings" },
   // ];
-//  const [loaded, setLoaded] = useState(false);
+  //  const [loaded, setLoaded] = useState(false);
 
   // Trigger animation when Menu data arrives
- 
+
   const listVariants = {
     hidden: {},
     visible: {
@@ -80,7 +93,7 @@ const DashboardLayout = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
   };
 
   return (
@@ -107,9 +120,12 @@ const DashboardLayout = () => {
                   // animate={{ opacity: 1, scale: 1, x: 0 }}
                   // exit={{ opacity: 0, }}
                   // transition={{ duration: 0.9 }}
+                  key={Menu.length}
                   variants={listVariants}
                   initial="hidden"
                   animate="visible"
+
+                  // animate={menuLoaded ? "visible" : "hidden"}
                   exit="hidden"
                 >
                   {/* <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span1 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Dashboard</span></Link></li>
@@ -122,7 +138,7 @@ const DashboardLayout = () => {
                   <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
                   <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li> */}
 
-                  {Menu.map((item, index) => (
+                  {Menu.map((item,index) => (
                     <motion.li key={item.sno} variants={itemVariants}>
                       <Link
                         className={`Li-always ${isOpen ? "Li-b" : "li-a"}`}
@@ -131,9 +147,15 @@ const DashboardLayout = () => {
                         <div className="icon">
                           <LuLayoutDashboard />
                         </div>
-                        <span className={`${isOpen ? "" : "span"}`}>
-                          &nbsp;&nbsp;{item.caption}
-                        </span>
+                        <motion.span
+                          variants={{
+                            hidden: { opacity: 0, x: -80},
+                            visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: index * 0.1 } }
+                          }}
+                          initial="hidden"
+                          animate={isOpen ? "visible" : "hidden"}>
+                          &nbsp;&nbsp;&nbsp;{item.caption}
+                        </motion.span>
                       </Link>
                     </motion.li>
                   ))}

@@ -209,21 +209,10 @@ body {
   position: absolute;
   left: 35px;
   opacity: 1;
-  transition: 0.5s ease all;
+  transition: 0.9s ease all;
 }
 
-.sidebar li .Li-always .span1{
-  transition: 0.3s ease all;
-}
-
-.sidebar li .Li-always .span2{
-  transition: 0.5s ease all;
-}
-
-.sidebar li .Li-always .span3{
-  transition: 0.7s ease all;
-}
-
+/*  */
 .sidebar li .Li-always .span {
   left: -100%;
   opacity: 0;

@@ -6,10 +6,13 @@
 
 .top {
     /* background: var(--primary-color); */
+/* background-image: linear-gradient(to top right, #5761B2, #1FC5A8); */
+
     background: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815));
+    
     width: auto;
     padding: 80px 20px;
-    border-radius: 10px;
+    border-radius: 3px;
     color: aliceblue;
     text-transform: uppercase;
     position: relative;

@@ -12,11 +12,14 @@ body {
   transition: 0.5s ease all;
   width: 300px;
   padding: 0px;
+  box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
+-webkit-box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
+-moz-box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
 }
 
 .sidebar-not-active {
   transition: 0.5s ease all;
-  width: 6.2rem;
+  width: 6rem;
 }
 
 
@@ -228,6 +231,8 @@ body {
 
 
 
+
+
 /* .sidebar Li .Li-always:hover {
   background-color: rgba(0, 0, 0, 0.288);
   transform: scale(1);
@@ -251,6 +256,60 @@ body {
 
 .main2 {
   height: 100vh;
+  
+  
+  padding: 0px 0%;
+}
+
+.main3 {
+  height: 100vh;
   overflow-y: scroll;
-  padding: 40px 4%;
+  padding: 22px 2%;
+}
+.main-top{
+  height: 70px;
+  background:linear-gradient(126deg, rgb(0, 33, 46) 38%,rgba(2, 53, 77, 1)  100%);
+  /* border: 1px solid white; */
+  position: relative;
+}
+
+.main-top::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  /* border-radius: 5px; */
+  /* transition: 0.5s; */
+  z-index: 1;
+  /* background-color: rgba(0, 0, 0, 0.578); */
+}
+
+
+/* ===== Scrollbar Width ===== */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 8px;
+  transition: 0.5s ease all;
+}
+
+::-webkit-scrollbar:hover {
+  width: 5px;
+  height: 8px;
+}
+
+/* ===== Scrollbar Track ===== */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ===== Scrollbar Thumb ===== */
+::-webkit-scrollbar-thumb {
+  background: black;
+  /* border-radius: 10px; */
+  /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3); */
+}
+
+/* ===== Hover Effect ===== */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+  width: 8px;
 }

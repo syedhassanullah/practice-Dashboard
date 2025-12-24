@@ -167,8 +167,13 @@ const DashboardLayout = () => {
         </aside>
         {/* </div> */}
         <main className={`main-content  p-0`}>
+          
           <div className='main2'>
+            <div className='main-top'></div>
+            <div className='main3'>
+            
             <Outlet />
+            </div>
           </div>
         </main>
       </div>

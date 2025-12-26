@@ -2,9 +2,21 @@ import { Outlet, Link } from 'react-router-dom';
 import './DashboadLayouts.css';
 import { Slant as Hamburger } from 'hamburger-react'
 import { useEffect, useState } from 'react';
-import { LuLayoutDashboard } from "react-icons/lu";
+// import { LuLayoutDashboard } from "react-icons/lu";
 import { motion } from 'framer-motion';
 import getmenus from '../APIs/MenuApi'
+import { RiDashboardHorizontalFill } from "react-icons/ri";
+import { IoSettingsSharp } from "react-icons/io5";
+import { RiProfileFill } from "react-icons/ri";
+import { MdWifiProtectedSetup } from "react-icons/md";
+import { FaClock } from "react-icons/fa6";
+
+
+
+
+
+
+
 // import { menu } from 'framer-motion/client';
 // optional for styling
 // import { Container } from 'react-bootstrap';
@@ -70,14 +82,13 @@ const DashboardLayout = () => {
 
 
 
-  // const menuItems = [
-  //   { name: "Dashboard", to: "/dashboard" },
-  //   { name: "Profile", to: "/dashboard/profile" },
-  //   { name: "Settings", to: "/dashboard/settings" },
-  //   { name: "Dashboard", to: "/dashboard" },
-  //   { name: "Profile", to: "/dashboard/profile" },
-  //   { name: "Settings", to: "/dashboard/settings" },
-  // ];
+  const menuItems = {
+    Home: RiDashboardHorizontalFill ,
+    Setting: IoSettingsSharp ,
+    Profile: RiProfileFill,
+    Setups: MdWifiProtectedSetup,
+    Shifts: FaClock
+};
   //  const [loaded, setLoaded] = useState(false);
 
   // Trigger animation when Menu data arrives
@@ -138,27 +149,34 @@ const DashboardLayout = () => {
                   <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span2 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Profile</span></Link></li>
                   <li><Link className={` Li-always  ${isOpen ? 'Li-b' : 'li-a'} `} to="/dashboard"><div className='icon'><LuLayoutDashboard /></div><span className={`span3 ${isOpen ? '' : 'span'}`}>&nbsp;&nbsp;Setting</span></Link></li> */}
 
-                  {Menu.map((item,index) => (
-                    <motion.li key={item.sno} variants={itemVariants}>
-                      <Link
-                        className={`Li-always ${isOpen ? "Li-b" : "li-a"}`}
-                        to={item.url}
-                      >
-                        <div className="icon">
-                          <LuLayoutDashboard />
-                        </div>
-                        <motion.span
-                          variants={{
-                            hidden: { opacity: 0, x: -80},
-                            visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: index * 0.1 } }
-                          }}
-                          initial="hidden"
-                          animate={isOpen ? "visible" : "hidden"}>
-                          &nbsp;&nbsp;&nbsp;{item.caption}
-                        </motion.span>
-                      </Link>
-                    </motion.li>
-                  ))}
+                  {Menu.map((item, index) => {
+                    const Icon = menuItems[item.caption];
+                    return (
+                      <motion.li key={item.sno} variants={itemVariants}>
+                        <Link
+                          className={`Li-always ${isOpen ? "Li-b" : "li-a"}`}
+                          to={item.url}
+                        >
+                            <div className="icon">
+                               {Icon && <Icon size={20} />}
+                            </div>
+
+
+                          <motion.span
+                            variants={{
+                              hidden: { opacity: 0, x: -80 },
+                              visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: index * 0.1 } }
+                            }}
+                            initial="hidden"
+                            animate={isOpen ? "visible" : "hidden"}>
+                            &nbsp;&nbsp;&nbsp;&nbsp;{item.caption}
+                          </motion.span>
+                        </Link>
+                      </motion.li>
+                      
+                    )
+                    
+                  })}
                 </motion.ul>
               </nav>
             </div>
@@ -167,12 +185,12 @@ const DashboardLayout = () => {
         </aside>
         {/* </div> */}
         <main className={`main-content  p-0`}>
-          
+
           <div className='main2'>
             <div className='main-top'></div>
             <div className='main3'>
-            
-            <Outlet />
+
+              <Outlet />
             </div>
           </div>
         </main>

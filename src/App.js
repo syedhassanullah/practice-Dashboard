@@ -25,7 +25,7 @@ const App = () => {
         >
           <Route index element={<Home />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="settings" element={<Settings />} />
+          <Route path="setting" element={<Settings />} />
         </Route>
 
         <Route path="/" element={<Navigate to="/dashboard" replace />} />

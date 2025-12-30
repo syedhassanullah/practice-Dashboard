@@ -1,19 +1,19 @@
 import './Home.css';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion,  } from 'framer-motion';
 
 const Home = () => {
   return (
     <>
-      <AnimatePresence>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9  }}
-          animate={{ opacity: 1, scale: 1}}
-          exit={{ opacity: 0, }}
-          transition={{ duration: 0.5 }}
+      <>
+        <div
+          // initial={{ opacity: 0, scale: 0.9  }}
+          // animate={{ opacity: 1, scale: 1}}
+          // exit={{ opacity: 0,scale: 0.9 }}
+          // transition={{ duration: 0.5 }}
         >
           <div
             className="top">
-            <h1>Syed hassan ullah </h1>
+            <h1>MAKKAYS PVT LTD</h1>
           </div>
 
           <div className='middle'>
@@ -36,8 +36,8 @@ const Home = () => {
             <div className='m2left' />
 
           </div>
-        </motion.div>
-      </AnimatePresence>
+        </div>
+      </>
     </>
   );
 };

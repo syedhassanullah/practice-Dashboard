@@ -266,6 +266,7 @@ body {
   height: 100vh;
   overflow-y: scroll;
   padding: 22px 2%;
+  position: relative;
 }
 .main-top{
   height: 70px;

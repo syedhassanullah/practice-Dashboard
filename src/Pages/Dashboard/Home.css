@@ -1,21 +1,39 @@
 :root {
-    --primary-color: linear-gradient(126deg, rgba(2, 53, 77, 1) 38%, rgb(0, 33, 46) 100%);
+    --primary-color: linear-gradient(126deg, rgb(184, 206, 215) 38%, rgba(181, 181, 181, 0.373) 100%);
+    /* --primary-color: linear-gradient(126deg, rgba(2, 53, 77, 1) 38%, rgb(0, 33, 46) 100%);
+    */
+    --text-color1: rgb(0, 25, 38);
+    --secondary-color: rgba(240, 248, 255, 0.292);
+    --theme-color: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815));
+    --theme-color-secondary: linear-gradient(45deg, rgba(0, 167, 255, 0.5), rgba(0, 255, 167, 0.4));
     /* --secondry : linear-gradient(135deg, rgba(red), rgba(var(yellow), rgba(blue, .75)) */
 }
 
 
 .top {
     /* background: var(--primary-color); */
-/* background-image: linear-gradient(to top right, #5761B2, #1FC5A8); */
+    /* background-image: linear-gradient(to top right, #5761B2, #1FC5A8); */
 
-    background: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815));
-    
+
+    /* background-color: var(--secondary-color); */
     width: auto;
     padding: 80px 20px;
     border-radius: 3px;
-    color: aliceblue;
+    color: var(--text-color1);
     text-transform: uppercase;
     position: relative;
+    background: var(--secondary-color);
+}
+
+.top::before,
+.top::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* top:0; right:0; bottom:0; left:0; */
+    border-radius: 5px;
+    transition: 0.5s;
+    z-index: -1;
 }
 
 .middle {

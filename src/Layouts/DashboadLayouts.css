@@ -13,7 +13,7 @@ body {
   width: 300px;
   padding: 0px;
   box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
--webkit-box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
+-webkit-box-shadow: 6px 0px 17px -2px rgba(0, 0, 0, 0.366);
 -moz-box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
 }
 
@@ -35,7 +35,15 @@ body {
   padding-right: 6px;
   display: flex;
   justify-content: flex-end;
+  color: var(--text-color1);
+
 }
+
+.hamburger-react{
+  border-radius: 5px !important;
+  background-color: var(--secondary-color);
+}
+
 /* .humburger {
   display: flex;
   justify-content: center;
@@ -89,7 +97,7 @@ body {
   /* width: 100%; */
   border-radius: 5px;
   /* transition: 0.9s ease all; */
-  background-color: rgba(240, 248, 255, 0.103);
+  /* background-color: rgba(240, 248, 255, 0.103); */
   transform: scale(0.9);
   position: relative;
   font-size: 15px;
@@ -141,7 +149,7 @@ body {
 .sidebar li .Li-always {
   position: relative;
   transition: 0.9s ease ;
-  color: white;
+  color: var(--text-color1);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -149,7 +157,7 @@ body {
   height: 52px;
   text-align: center;
   border-radius: 5px;
-  background-color: rgba(240, 248, 255, 0.103);
+  background-color: var(--secondary-color);
   transform: scale(0.9);
   font-size: 15px;
   overflow: hidden; /* zaroori hai taake before/after overflow na kare */
@@ -172,18 +180,22 @@ body {
   border-radius: 5px;
   transition: 0.5s;
   z-index: -1;
+  
 }
 
 /* 👇 Before gives glowing effect */
 .sidebar li .Li-always::before {
-  background: linear-gradient(45deg, rgba(0,167,255,0.5), rgba(0,255,167,0.4));
+  background: var(--theme-color);
+  
   opacity: 0;
   transform: scale(0.7);
 }
 
 /* 👇 After gives dim background overlay */
 .sidebar li .Li-always::after {
-  background: rgba(0, 0, 0, 0.288);
+  /*  */
+  background-color: rgba(0, 12, 22, 0.556);
+  /* background-color: rgb(0, 0, 0); */
   opacity: 0;
 }
 
@@ -201,14 +213,19 @@ body {
 
 
 
-.sidebar Li .Li-always .icon {
+
+.sidebar Li .Li-always .icon  {
   position: absolute;
   left: 18px;
   margin: 0;
   font-size: 18px;
   padding: 0;
   display: inline-flex;
+  
 }
+
+
+
 .sidebar li .Li-always span {
   position: absolute;
   left: 35px;
@@ -270,7 +287,8 @@ body {
 }
 .main-top{
   height: 70px;
-  background:linear-gradient(126deg, rgb(0, 33, 46) 38%,rgba(2, 53, 77, 1)  100%);
+  /* background:linear-gradient(126deg, rgb(0, 33, 46) 38%,rgba(2, 53, 77, 1)  100%); */
+  background:  linear-gradient(126deg, rgba(181, 181, 181, 0.367) 10%,rgb(165, 187, 196)  100%);
   /* border: 1px solid white; */
   position: relative;
 }

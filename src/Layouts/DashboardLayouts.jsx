@@ -1,6 +1,6 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import './DashboadLayouts.css';
-import { Slant as Hamburger } from 'hamburger-react'
+import { Rotate  as Hamburger } from 'hamburger-react'
 import { useEffect, useState } from 'react';
 // import { LuLayoutDashboard } from "react-icons/lu";
 import { motion } from 'framer-motion';
@@ -118,7 +118,7 @@ const DashboardLayout = () => {
           <div className='sidebar-in'>
             <div className={`hum ${isOpen ? 'humburger1' : 'humburger'}`}>
               <Hamburger
-                size={25}
+                size={22}
                 duration={0.8}
                 toggled={isOpen}
                 toggle={setOpen}

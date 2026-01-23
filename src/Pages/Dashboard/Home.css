@@ -2,7 +2,7 @@
     --primary-color: linear-gradient(126deg, rgb(184, 206, 215) 38%, rgba(181, 181, 181, 0.373) 100%);
     /* --primary-color: linear-gradient(126deg, rgba(2, 53, 77, 1) 38%, rgb(0, 33, 46) 100%);
     */
-    --text-color1: rgb(0, 25, 38);
+    --text-color1: rgb(0, 41, 54);
     --secondary-color: rgba(240, 248, 255, 0.292);
     --theme-color: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815));
     --theme-color-secondary: linear-gradient(45deg, rgba(0, 167, 255, 0.5), rgba(0, 255, 167, 0.4));
@@ -36,62 +36,28 @@
     z-index: -1;
 }
 
-.middle {
-    /* background-color: white; */
+.cards {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 25px 0px;
+    justify-content: start;
+    /* align-items: center; */
+    flex-wrap: wrap;
     gap: 20px;
-    /* padding: 20px; */
-    border-radius: 10px;
-
-    .sec {
-        display: flex;
-        justify-content: space-between;
-        /* background-color: aqua; */
-        width: 100%;
-        gap: 20px;
-
-        .minsec {
-            height: 80px;
-            background: var(--primary-color);
-            width: 49%;
-            border-radius: 10px;
-        }
-    }
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* hamesha 4 cards per row */
+    gap: 22px;
+    /* height: 100%; */
 }
 
-.middle2 {
-    height: 450px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-
-    .m2left {
-        height: 100%;
-        background: var(--primary-color);
-        width: 100%;
-        border-radius: 5px;
-    }
-
-
-
-    /* .m2right{
-        height: 100%;
-        width: 15%;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .m2rightchild{
-            width: 100%;
-            height: 30%;
-            background: var(--primary-color);
-            border-radius: 10px;
-        }
-
-    } */
+.cards .module {
+    width: 100%;
+    height: 7rem;
+    border-radius: 5px;
+    background-color: ;
+    cursor: pointer;
+    color: aliceblue;
+    border: 1px solid gray;
+    /* box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.13);
+-webkit-box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.13);
+-moz-box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.13); */
 }

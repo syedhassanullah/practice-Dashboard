@@ -1,6 +1,10 @@
 body {
-  /* overflow-y: hidden; */
+  background-color: aliceblue;
 }
+
+
+
+
 
 
 .dashboard-container {
@@ -10,11 +14,11 @@ body {
 .sidebar {
   height: 100vh;
   transition: 0.5s ease all;
-  width: 300px;
+  width: 280px;
   padding: 0px;
-  box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
--webkit-box-shadow: 6px 0px 17px -2px rgba(0, 0, 0, 0.366);
--moz-box-shadow: 6px 0px 17px -2px rgba(0,0,0,0.77);
+  box-shadow: 6px 0px 17px -2px rgba(0, 0, 0, 0.77);
+  -webkit-box-shadow: 6px 0px 17px -2px rgba(0, 0, 0, 0.366);
+  -moz-box-shadow: 6px 0px 17px -2px rgba(0, 0, 0, 0.77);
 }
 
 .sidebar-not-active {
@@ -26,46 +30,91 @@ body {
 
 
 
-/* 
-.hamburger-react {
-  right: 0 !important;
-} */
-.hum{
-  /* transition: 0.5s ease all; */
+.hum {
   padding-right: 6px;
   display: flex;
   justify-content: flex-end;
   color: var(--text-color1);
+  margin-bottom: 10px;
+
 
 }
 
-.hamburger-react{
-  border-radius: 5px !important;
-  background-color: var(--secondary-color);
+.hamburger-react {
+  border-radius: 100% !important;
+  /* background-color: var(--secondary-color); */
 }
 
-/* .humburger {
+.sub-icon {
+  /* height: 120px; */
   display: flex;
+  align-items: center;
   justify-content: center;
+  bottom: 0px;
+  margin: 12px 0px;
 }
-.humburger1 {
-  display: flex;
-  justify-content: flex-end;
-} */
 
+.sub-icon-in {
+  text-align: center;
+  height: 47px;
+  width: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color1);
+  font-size: 20px;
+  background: var(--theme-color);
+  border-radius: 100%;
+  transition: 0.3s ease all;
+  cursor: pointer;
+   animation: rotateIcon 10s linear infinite;
+}
+
+
+.sub-icon-in:hover{
+  transform: scale(1.2);
+  font-size: 20px;
+ 
+}
+
+
+
+@keyframes rotateIcon {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Sidebar h Ye------------------------------------------------------------------ */
 
 .sidebar-in {
   background: var(--primary-color);
-  
-   /* background: linear-gradient(135deg, rgba(var(red), .85), rgba(var(yellow), .2), rgba(var(green), .75)); */
-  /* width: 100%; */
   height: 100%;
   color: white;
-  padding: 15px;
+  padding: 15px 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border-radius: 30px; */
+}
+
+
+/* Nav--------------------------------------------------------------------------- */
+
+
+nav {
+  overflow-y: scroll;
+
+}
+
+nav::-webkit-scrollbar-thumb {
+  background: transparent;
+
+  border-radius: 100px;
+  /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3); */
 }
 
 .sidebar ul {
@@ -79,12 +128,12 @@ body {
 
 }
 
-.sidebar Li  {
+.sidebar Li {
   width: 100%;
   transition: 0.5s ease;
 }
 
-.sidebar  .li-a  {
+.sidebar .li-a {
   color: white;
   text-decoration: none;
   align-items: center;
@@ -92,63 +141,16 @@ body {
   margin: 4px 0;
   height: 52px;
   width: 57px;
-  /* padding: 12px 12px; */
   text-align: center;
-  /* width: 100%; */
   border-radius: 5px;
-  /* transition: 0.9s ease all; */
-  /* background-color: rgba(240, 248, 255, 0.103); */
   transform: scale(0.9);
   position: relative;
   font-size: 15px;
-  /* display: none; */
 }
-/* 
-.sidebar Li  .active{
-  color: white;
-  text-decoration: none;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  margin: 4px 0;
-  height: 52px;
-  padding: 12px 12px;
-  text-align: center;
-  width: 100%;
-  border-radius: 5px;
-  transition: 0.5s ease all;
-  background-color: rgba(240, 248, 255, 0.103);
-  transform: scale(0.9);
-  font-size: 15px;
-  display: none;
-} */
-
-/* .sidebar Li .Li-always{
-  transition: 0.5s ease all;
-  color: white;
-  text-decoration: none;
-  align-items: center;
-  display: flex;
-  display: inline-flex;
-  margin: 4px 0;
-  height: 52px;
- 
-  text-align: center;
-  width: 100%;
-  border-radius: 5px;
-
-  background-color: rgba(240, 248, 255, 0.103);
-  transform: scale(0.9);
-  position: relative;
-  font-size: 15px;
-  
- 
-} */
-
 
 .sidebar li .Li-always {
   position: relative;
-  transition: 0.9s ease ;
+  transition: 0.9s ease;
   color: var(--text-color1);
   text-decoration: none;
   display: flex;
@@ -160,33 +162,30 @@ body {
   background-color: var(--secondary-color);
   transform: scale(0.9);
   font-size: 15px;
-  overflow: hidden; /* zaroori hai taake before/after overflow na kare */
+  overflow: hidden;
 }
 
 .Li-b {
   width: 100%;
 }
 
-/* .sidebar li .Li-always:hover{
-  transform: scale(1);
-} */
 
-/* 👇 Create before and after pseudo elements */
 .sidebar li .Li-always::before,
 .sidebar li .Li-always::after {
   content: "";
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0; */
   border-radius: 5px;
   transition: 0.5s;
   z-index: -1;
-  
+
 }
 
 /* 👇 Before gives glowing effect */
 .sidebar li .Li-always::before {
   background: var(--theme-color);
-  
+
   opacity: 0;
   transform: scale(0.7);
 }
@@ -194,7 +193,7 @@ body {
 /* 👇 After gives dim background overlay */
 .sidebar li .Li-always::after {
   /*  */
-  background-color: rgba(0, 12, 22, 0.556);
+  background-color: rgba(0, 12, 22, 0.14);
   /* background-color: rgb(0, 0, 0); */
   opacity: 0;
 }
@@ -213,15 +212,14 @@ body {
 
 
 
-
-.sidebar Li .Li-always .icon  {
+.sidebar Li .Li-always .icon {
   position: absolute;
   left: 18px;
   margin: 0;
   font-size: 18px;
   padding: 0;
   display: inline-flex;
-  
+
 }
 
 
@@ -231,35 +229,32 @@ body {
   left: 35px;
   opacity: 1;
   transition: 0.9s ease all;
+  font-weight: 600;
+
 }
+
+
 
 /*  */
 .sidebar li .Li-always .span {
   left: -100%;
   opacity: 0;
   transform: scale(0.9);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* .sidebar Li .Li-always:hover {
-  background-color: rgba(0, 0, 0, 0.288);
-  transform: scale(1);
-  box-shadow: 0px 0px 12px 9px rgba(0, 167, 255, 0.18);
-  -webkit-box-shadow: 0px 0px 12px 9px rgba(0, 167, 255, 0.18);
-  -moz-box-shadow: 0px 0px 12px 9px rgba(0, 167, 255, 0.18);
 
 }
- */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -274,8 +269,9 @@ body {
 
 .main2 {
   height: 100vh;
-  
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0px 0%;
 }
 
@@ -285,35 +281,71 @@ body {
   padding: 22px 2%;
   position: relative;
 }
-.main-top{
+
+.main-top {
   height: 70px;
   /* background:linear-gradient(126deg, rgb(0, 33, 46) 38%,rgba(2, 53, 77, 1)  100%); */
-  background:  linear-gradient(126deg, rgba(181, 181, 181, 0.367) 10%,rgb(165, 187, 196)  100%);
+  /* background:  linear-gradient(126deg, rgba(181, 181, 181, 0.367) 10%,rgb(165, 187, 196)  100%); */
+  background: rgb(0, 30, 42);
   /* border: 1px solid white; */
   position: relative;
+  box-shadow: 0px 8px 17px -3px rgba(0, 0, 0, 0.56);
+  -webkit-box-shadow: 0px 8px 17px -3px rgba(0, 0, 0, 0.56);
+  -moz-box-shadow: 0px 8px 17px -3px rgba(0, 0, 0, 0.56);
+  color: aliceblue;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 0px 30px;
+}
+
+.main-top h3 {
+  margin: 0px;
 }
 
 .main-top::after {
   content: "";
   position: absolute;
-  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0; */
   /* border-radius: 5px; */
   /* transition: 0.5s; */
   z-index: 1;
   /* background-color: rgba(0, 0, 0, 0.578); */
 }
 
+.main-end {
+  width: 100%;
+  /* background-color: var(--text-color1); */
+  padding: 0px 2%;
+  bottom: 0;
+}
 
-/* ===== Scrollbar Width ===== */
+.main-end-inner {
+  padding: 7px 0px;
+  /* height: 30px; */
+  border-top: 1px solid rgba(128, 128, 128, 0.57);
+  /* margin: 10px; */
+  text-align: center;
+  font-size: 12px;
+}
+
+
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 4px;
   height: 8px;
   transition: 0.5s ease all;
 }
 
-::-webkit-scrollbar:hover {
-  width: 5px;
-  height: 8px;
+::-webkit-scrollbar:hover ::-webkit-scrollbar-thumb {
+  /* width: 5px;
+  height: 8px; */
+  background-color: black;
+}
+
+.sidebar-in:hover ::-webkit-scrollbar-thumb {
+  background-color: black;
+
 }
 
 /* ===== Scrollbar Track ===== */
@@ -324,7 +356,8 @@ body {
 /* ===== Scrollbar Thumb ===== */
 ::-webkit-scrollbar-thumb {
   background: black;
-  /* border-radius: 10px; */
+
+  border-radius: 100px;
   /* box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3); */
 }
 

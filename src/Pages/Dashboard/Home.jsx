@@ -1,43 +1,39 @@
 import './Home.css';
-import { motion,  } from 'framer-motion';
+// import { motion,  } from 'framer-motion';
 
 const Home = () => {
   return (
     <>
-      <>
-        <div
-          // initial={{ opacity: 0, scale: 0.9  }}
-          // animate={{ opacity: 1, scale: 1}}
-          // exit={{ opacity: 0,scale: 0.9 }}
-          // transition={{ duration: 0.5 }}
-        >
-          <div
-            className="top">
-            <h1>MAKKAYS PVT LTD</h1>
-          </div>
+        <h1>Hello</h1>
+        <div className='cards'>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+          <div className='module'><h4>Hello</h4></div>
+         
 
-          <div className='middle'>
-            <div className='sec'>
-              <motion.div className='minsec' />
-              <motion.div className='minsec' />
-            </div>
-
-            <div className='sec'>
-              <div className='minsec' />
-              <div className='minsec' />
-              <div className='minsec' />
-            </div>
-          </div>
-
-          <div className='middle2'>
-            <div className='m2left' />
-
-            <div className='m2left' />
-            <div className='m2left' />
-
-          </div>
         </div>
-      </>
+        
     </>
   );
 };

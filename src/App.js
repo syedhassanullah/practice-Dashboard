@@ -5,34 +5,37 @@ import Home from './Pages/Dashboard/Home';
 import Profile from './Pages/Dashboard/Profile';
 import Settings from './Pages/Dashboard/Settings';
 import Login from './Pages/Login';
+import { ThemeProvider } from './Context/Theme Context/ThemeContext';
 
 const App = () => {
   const isAuthenticated = true; // Replace with real auth logic
 
   return (
-    <BrowserRouter>
-      <Routes>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
 
-        <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login />} />
 
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <DashboardLayout />
-            </ProtectedRoute>
-          }
-        >
-          <Route index element={<Home />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="setting" element={<Settings />} />
-        </Route>
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute isAuthenticated={isAuthenticated}>
+                <DashboardLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Home />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="setting" element={<Settings />} />
+          </Route>
 
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="*" element={<h2>404 - Not Found</h2>} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="*" element={<h2>404 - Not Found</h2>} />
 
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 

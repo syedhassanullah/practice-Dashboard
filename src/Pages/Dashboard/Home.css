@@ -1,12 +1,51 @@
-:root {
-    --primary-color: linear-gradient(126deg, rgb(184, 206, 215) 38%, rgba(181, 181, 181, 0.373) 100%);
-    /* --primary-color: linear-gradient(126deg, rgba(2, 53, 77, 1) 38%, rgb(0, 33, 46) 100%);
-    */
-    --text-color1: rgb(0, 41, 54);
+body.light {
+    --onground: linear-gradient(126deg, rgb(184, 206, 215) 38%, rgba(181, 181, 181, 0.1) 100%);
+    --onground2: rgb(27, 35, 45);
+    --ground: aliceblue;
+    --text-color: rgb(0, 41, 54);
     --secondary-color: rgba(240, 248, 255, 0.292);
     --theme-color: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815));
-    --theme-color-secondary: linear-gradient(45deg, rgba(0, 167, 255, 0.5), rgba(0, 255, 167, 0.4));
+    --border-color: rgba(128, 128, 128, 0.747);
+    /* --ant-segmented-item-selected-bg: #000000 !important; */
+    /* --theme-color-secondary: linear-gradient(45deg, rgba(0, 167, 255, 0.5), rgba(0, 255, 167, 0.4)); */
     /* --secondry : linear-gradient(135deg, rgba(red), rgba(var(yellow), rgba(blue, .75)) */
+}
+
+/* index.css ya App.css */
+/* index.css */
+body.dark {
+    --ground: rgb(19, 25, 32);
+    --onground: rgb(27, 35, 45);
+    --onground2: aliceblue;
+    --text-color: aliceblue;
+    --mini-heading-color: rgb(156, 156, 156);
+    --secondary-color: rgba(255, 255, 255, 0.1);
+    --theme-color: linear-gradient(45deg, rgba(0, 100, 200, 0.9), rgba(90, 0, 200, 0.8));
+    --theme-color2: linear-gradient(45deg, rgba(0, 100, 200, 0.34), rgba(90, 0, 200, 0.466));
+    --border-color: rgba(139, 139, 139, 0.775);
+    /* --ant-segmented-item-selected-bg: #ffffff !important; */
+    /* --theme-color-secondary: linear-gradient(45deg, rgba(0, 100, 200, 0.5), rgba(0, 255, 150, 0.4)) */
+}
+
+/* .css-var-root.ant-segmented{
+    background-color: var(--secondary-color);
+} */
+
+.ant-segmented {
+    background: var(--theme-color);
+    color: var(--text-color);
+}
+
+/* .ant-segmented-item-selected{
+    color: var(--text-color);
+} */
+
+.ant-segmented-item-selected {
+    /* color: var(--text-color); */
+}
+
+.ant-segmented-item-selected {
+    color: white;
 }
 
 
@@ -19,7 +58,7 @@
     width: auto;
     padding: 80px 20px;
     border-radius: 3px;
-    color: var(--text-color1);
+    color: var(--text-color);
     text-transform: uppercase;
     position: relative;
     background: var(--secondary-color);
@@ -36,6 +75,8 @@
     z-index: -1;
 }
 
+
+
 .cards {
     display: flex;
     justify-content: start;
@@ -49,15 +90,163 @@
     /* height: 100%; */
 }
 
+
+
+:root {
+    --blue-start: #4F8EF7;
+    --blue-end:   #1E3C72;
+
+    --red-start:  #FF6A6A;
+    --red-end:    #C0392B;
+
+    --teal-start: #2EC4B6;
+    --teal-end:   #0F766E;
+
+    --purple-start:#9B7EDC;
+    --purple-end:  #5B3FD6;
+}
+
+
+/* Blue */
+/* .cards .module:nth-child(4n+1) {
+    background: linear-gradient(135deg, var(--blue-start), var(--blue-end));
+} */
+
+/* Red */
+/* .cards .module:nth-child(4n+2) {
+    background: linear-gradient(135deg, var(--red-start), var(--red-end));
+} */
+
+/* Teal */
+/* .cards .module:nth-child(4n+3) {
+    background: linear-gradient(135deg, var(--teal-start), var(--teal-end));
+} */
+
+/* Purple */
+/* .cards .module:nth-child(4n) {
+    background: linear-gradient(135deg, var(--purple-start), var(--purple-end));
+}
+
+
+ */
+
+
+
+.cards .module:nth-child(1) {
+    /* background: #578ebe; */
+    background: #578EBE;
+    background: linear-gradient(135deg, #4F8EF7 0%, #1E3C72 100%);
+}
+
+.cards .module:nth-child(2) {
+    /* background: #e35b5a; */
+    background: #E35B5A;
+    background: linear-gradient(135deg, #FF6A6A 0%, #C0392B 100%);
+}
+
+.cards .module:nth-child(3) {
+    /* background: #44b6ae; */
+    background: #44B6AE;
+    background: linear-gradient(135deg, #2EC4B6 0%, #0F766E 100%);
+}
+
+.cards .module:nth-child(4) {
+    /* background: #8775a7; */
+    background: #8775A7;
+    background: linear-gradient(135deg, #9B7EDC 0%, #5B3FD6 100%);
+}
+
+.cards .module:nth-child(8) {
+    /* background: #578ebe; */
+    background: #578EBE;
+    background: linear-gradient(135deg, #4F8EF7 0%, #1E3C72 100%);
+}
+
+.cards .module:nth-child(7) {
+    /* background: #e35b5a; */
+    background: #E35B5A;
+    background: linear-gradient(135deg, #FF6A6A 0%, #C0392B 100%);
+}
+
+.cards .module:nth-child(6) {
+    /* background: #44b6ae; */
+    background: #44B6AE;
+    background: linear-gradient(135deg, #2EC4B6 0%, #0F766E 100%);
+}
+
+.cards .module:nth-child(5) {
+    /* background: #8775a7; */
+    background: #8775A7;
+    background: linear-gradient(135deg, #9B7EDC 0%, #5B3FD6 100%);
+}
+.cards .module:nth-child(11) {
+    /* background: #578ebe; */
+    background: #578EBE;
+    background: linear-gradient(135deg, #4F8EF7 0%, #1E3C72 100%);
+}
+
+.cards .module:nth-child(12) {
+    /* background: #e35b5a; */
+    background: #E35B5A;
+    background: linear-gradient(135deg, #FF6A6A 0%, #C0392B 100%);
+}
+
+.cards .module:nth-child(9) {
+    /* background: #44b6ae; */
+    background: #44B6AE;
+    background: linear-gradient(135deg, #2EC4B6 0%, #0F766E 100%);
+}
+
+.cards .module:nth-child(10) {
+    /* background: #8775a7; */
+    background: #8775A7;
+    background: linear-gradient(135deg, #9B7EDC 0%, #5B3FD6 100%);
+}
+.cards .module:nth-child(13) {
+    /* background: #578ebe; */
+    background: #578EBE;
+    background: linear-gradient(135deg, #4F8EF7 0%, #1E3C72 100%);
+}
+
+.cards .module:nth-child(14) {
+    /* background: #e35b5a; */
+    background: #E35B5A;
+    background: linear-gradient(135deg, #FF6A6A 0%, #C0392B 100%);
+}
+
+.cards .module:nth-child(15) {
+    /* background: #44b6ae; */
+    background: #44B6AE;
+    background: linear-gradient(135deg, #2EC4B6 0%, #0F766E 100%);
+}
+
+.cards .module:nth-child(16) {
+    /* background: #8775a7; */
+    background: #8775A7;
+    background: linear-gradient(135deg, #9B7EDC 0%, #5B3FD6 100%);
+}
+
+
+
+
+
+
 .cards .module {
     width: 100%;
     height: 7rem;
     border-radius: 5px;
-    background-color: ;
+    /* background-color: ; */
     cursor: pointer;
     color: aliceblue;
-    border: 1px solid gray;
-    /* box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.13);
--webkit-box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.13);
--moz-box-shadow: 3px 3px 8px 3px rgba(0,0,0,0.13); */
+    padding: 12px;
+
+    /* border: 1px solid gray; */
+    transition: 0.3s ease all;
+    box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.13);
+    -webkit-box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.13);
+    -moz-box-shadow: 3px 3px 8px 3px rgba(0, 0, 0, 0.13);
+}
+
+.cards .module:hover {
+    transform: scale(1.1);
 }

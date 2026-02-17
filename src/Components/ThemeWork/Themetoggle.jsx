@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { ThemeContext } from "../Context/Theme Context/ThemeContext";
+import { OneThemeContext } from "../../Context/Theme Context/OneThemeContext";
 import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import { Segmented } from "antd";
 
 const ThemeToggle = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(OneThemeContext);
 
   const handleChange = (value) => {
     toggleTheme(value); // pass 'light' or 'dark'
@@ -13,7 +13,7 @@ const ThemeToggle = () => {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
       <Segmented
-        size="small"
+        size="medium"
         shape="round"
         value={theme} // control Segmented with current theme
         options={[

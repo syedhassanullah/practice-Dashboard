@@ -1,0 +1,75 @@
+.select-theme {
+    position: absolute;
+    top: 70px;
+    right: 130px;
+    z-index: 1000;
+    width: 350px;
+    height: inherit;
+    padding: 25px;
+    border-radius: 20px;
+    /* border: 1px solid var(--border-color); */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    gap: 15px;
+    justify-content: center;
+    background: var(--theme-color-light);
+    /* background: transparent; */
+    backdrop-filter: blur(24px);
+}
+
+
+.theme-change-icon {
+    color: var(--text-color);
+    height: 40px;
+    width: 40px;
+    font-size: 15px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--theme-color-light);
+    position: relative;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    cursor: pointer;
+    transition: 0.3s ease all;
+    /* border: 1px solid rgba(255, 255, 255, 0.214); */
+}
+
+.theme-change-icon::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: 0.5s;
+  z-index: -1;
+
+}
+
+/* 👇 Before gives glowing effect */
+.theme-change-icon::after {
+  background: var(--theme-color-dark);
+  border-radius: 100%;
+  opacity: 0;
+  left: -100;
+  transform: scale(0.3);
+}
+
+.theme-change-icon:hover::after {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+
+
+
+/* .theme-change-icon:hover{
+    background: var(--theme-color-dark);
+} */
+
+.select-theme .button {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background:var(--theme-color-light) ;
+}

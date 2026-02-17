@@ -1,41 +1,21 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import ProtectedRoute from './Components/ProtectedRoute';
-import DashboardLayout from './Layouts/DashboardLayouts';
-import Home from './Pages/Dashboard/Home';
-import Profile from './Pages/Dashboard/Profile';
-import Settings from './Pages/Dashboard/Settings';
-import Login from './Pages/Login';
+import { BrowserRouter } from 'react-router-dom';
+
 import { ThemeProvider } from './Context/Theme Context/ThemeContext';
+import AppRoutes from './Routes/AppRoutes';
+import { ThemeColorProvider } from './Context/Theme Context/ThemeColorContext'
+import { OneThemeProvider } from './Context/Theme Context/OneThemeContext';
+// import { ColorThemeProvider } from './Context/Theme Context/ColorThemeContext';
 
 const App = () => {
-  const isAuthenticated = true; // Replace with real auth logic
+  // Replace with real auth logic
 
   return (
-    <ThemeProvider>
+    <OneThemeProvider>
       <BrowserRouter>
-        <Routes>
-
-          <Route path="/login" element={<Login />} />
-
-          <Route
-            path="/dashboard"
-            element={
-              <ProtectedRoute isAuthenticated={isAuthenticated}>
-                <DashboardLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route index element={<Home />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="setting" element={<Settings />} />
-          </Route>
-
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          <Route path="*" element={<h2>404 - Not Found</h2>} />
-
-        </Routes>
+        <AppRoutes />
       </BrowserRouter>
-    </ThemeProvider>
+    </OneThemeProvider>
+
   );
 };
 

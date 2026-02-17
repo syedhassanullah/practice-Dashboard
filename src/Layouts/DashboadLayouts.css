@@ -1,9 +1,14 @@
 body {
-  background-color: var(--ground);
+  background: var(--ground);
   transition: 0.3s ease all;
 }
 
-
+.select-theme{
+  background: var(--ground);
+  position: absolute;
+  width: 400px;
+  height: 400px;
+}
 
 
 
@@ -28,6 +33,7 @@ body {
   /* transition: 0.3s ease all; */
   border-radius: none;
   /* backdrop-filter: blur(7px); */
+  background: linear-gradient(126deg, rgba(0, 0, 0, 0.364) 38%, rgba(0, 0, 0, 0.625) 100%);
 }
 
 
@@ -90,7 +96,7 @@ body {
 
 .sidebar-not-active {
   transition: 0.5s ease all;
-  width: 5.5rem;
+  width: 5rem;
 }
 
 
@@ -103,9 +109,18 @@ body {
   justify-content: flex-end;
   color: var(--text-color);
   margin-bottom: 10px;
-
-
+  transition: 0.3s ease all;
 }
+
+.Hamburger{
+  background:var(--theme-color-light) ; 
+  border-radius: 50%;
+  transition: 0.6s  ease color;
+}
+.Hamburger:hover{
+  /* background:var(--theme-color-dark) ; */
+}
+
 
 .hamburger-react {
   border-radius: 100% !important;
@@ -152,10 +167,10 @@ body {
 /* Sidebar h Ye------------------------------------------------------------------ */
 
 .sidebar-in {
-  background: var(--onground);
+  background: var(--theme-color-light); 
   height: 100%;
   color: white;
-  padding: 15px 15px;
+  padding: 15px 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -220,7 +235,7 @@ nav::-webkit-scrollbar-thumb {
   height: 50px;
   text-align: center;
   border-radius: 5px;
-  background-color: var(--secondary-color);
+  background: var(--theme-color-light);
   transform: scale(0.9);
   font-size: 14px;
   overflow: hidden;
@@ -237,7 +252,7 @@ nav::-webkit-scrollbar-thumb {
   height: 45px;
   text-align: center;
   border-radius: 5px;
-  background-color: var(--secondary-color);
+  background: var(--theme-color-light);
   transform: scale(0.8);
   border-left: 2px solid transparent;
   font-size: 15px;
@@ -389,34 +404,6 @@ nav::-webkit-scrollbar-thumb {
 .content-dash{
   width:1200px
 }
-
-.main-top {
-  height: 70px;
-  /* background:linear-gradient(126deg, rgb(0, 33, 46) 38%,rgba(2, 53, 77, 1)  100%); */
-  /* background:  linear-gradient(126deg, rgba(181, 181, 181, 0.367) 10%,rgb(165, 187, 196)  100%); */
-  background: var(--onground);
-  /* border: 1px solid white; */
-  position: relative;
-  box-shadow: 0px 8px 17px -3px rgba(0, 0, 0, 0.414);
-  -webkit-box-shadow: 0px 0px 17px -3px rgba(0, 0, 0, 0.56);
-  -moz-box-shadow: 0px 8px 17px -3px rgba(0, 0, 0, 0.56);
-  color: var(--text-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px 30px;
-  border-left: 1px solid var(--border-color);
-
-}
-
-
-
-.main-top h3 {
-  margin: 0px;
-}
-
-
-
 .main-end {
   width: 100%;
   /* background-color: var(--text-color); */
@@ -438,8 +425,10 @@ nav::-webkit-scrollbar-thumb {
 /*  -----------------*/
 .main-top2 {
   width: 100%;
-  /* background-color: var(--text-color); */
-  /* padding: 0px 2%; */
+  /* background: var(--theme-color-light); */
+  /* padding: 10px 30px; */
+  margin-bottom: 30px;
+  border-radius: 20px;
   bottom: 0;
 }
 
@@ -450,7 +439,7 @@ nav::-webkit-scrollbar-thumb {
   /* margin: 10px; */
   text-align: start;
   font-size: 14px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   display: flex;
   color: var(--text-color);
   border-bottom: 1px solid var(--border-color);
@@ -464,6 +453,7 @@ nav::-webkit-scrollbar-thumb {
 
 .main-top2-inner p{
   margin: 0px;
+  color: var(--secondary-color);
 }
 
 .icon-links{

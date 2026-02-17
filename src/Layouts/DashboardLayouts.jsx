@@ -3,7 +3,7 @@ import './DashboadLayouts.css';
 import { Squeeze as Hamburger } from 'hamburger-react'
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import getmenus from '../APIs/MenuApi'
+// import getmenus from '../APIs/MenuApi'
 // import { RiDashboardHorizontalFill } from "react-icons/ri";
 // import { IoSettingsSharp } from "react-icons/io5";
 // import { RiProfileFill } from "react-icons/ri";
@@ -11,11 +11,13 @@ import { MdWifiProtectedSetup } from "react-icons/md";
 import { FaClock } from "react-icons/fa6";
 import { AnimatePresence } from 'framer-motion';
 import { BsGrid3X3GapFill } from "react-icons/bs";
-import ThemeToggle from '../Components/Themetoggle';
+// import ThemeToggle from '../Components/ThemeWork/Themetoggle';
 import getmenuss from '../APIs/MenusApi';
 import { MdDashboard, MdPeople, MdSettings } from 'react-icons/md';
 import { MdKeyboardArrowDown } from "react-icons/md";
 // import SidebarSkeleton from '../Components/Skeleton/Sidebarskeleton.js'
+
+import Header from './Header/Header';
 
 
 const DashboardLayout = () => {
@@ -53,21 +55,21 @@ const DashboardLayout = () => {
 
 
 
-  const [Menu, setMenu] = useState([]);
+  // const [Menu, setMenu] = useState([]);
   const [Menu2, setMenu2] = useState([]);
   // const [menuLoading, setMenuLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getmenus();
+        // const data = await getmenus();
         const data2 = await getmenuss();
-        setMenu(data);
+        // setMenu(data);
         setMenu2(data2)
 
         console.log(data2, '----------------------------------')
       } catch (error) {
         console.error(error);
-      } 
+      }
     };
     fetchData();
   }, []);
@@ -149,15 +151,16 @@ const DashboardLayout = () => {
 
           <div className='sidebar-in'>
             <div className={`hum ${isOpen ? 'humburger1' : 'humburger'}`}>
-              <Hamburger
-                size={28}
-                duration={0.8}
-                toggled={isOpen}
-                toggle={setOpen}
-                onToggle={handleToggle}
-              />
+              <div className='Hamburger'>
+                <Hamburger
+                  size={20}
+                  duration={0.8}
+                  toggled={isOpen}
+                  toggle={setOpen}
+                  onToggle={handleToggle}
+                />
+              </div>
             </div>
-
             {/* <h2>Admin Panel</h2> */}
             <nav>
               <motion.ul
@@ -168,97 +171,98 @@ const DashboardLayout = () => {
               >
 
                 {
-                  
-                    Menu2.map((item, index) => {
-                      const Icon = menuItems[item.caption];
-                      const isActive =
-                        location.pathname === item.url ||
-                        item.children?.some(child =>
-                          location.pathname.startsWith(child.url)
-                        );
-                      return (
 
-                        <motion.li key={item.id} variants={itemVariants}>
+                  Menu2.map((item, index) => {
+                    const Icon = menuItems[item.caption];
+                    const isActive =
+                      location.pathname === item.url ||
+                      item.children?.some(child =>
+                        location.pathname.startsWith(child.url)
+                      );
+                    return (
 
-                          <NavLink
+                      <motion.li key={item.id} variants={itemVariants}>
 
-                            to={item.url}
-                            className={() =>
-                              `Li-always ${isActive ? "active-li" : ""} ${isOpen ? "Li-b" : "li-a"}`
-                            }
+                        <NavLink
 
-                            onClick={() => item.children?.length && toggleMenu(item.id)}
+                          to={item.url}
+                          className={() =>
+                            `Li-always ${isActive ? "active-li" : ""} ${isOpen ? "Li-b" : "li-a"}`
+                          }
+
+                          onClick={() => item.children?.length && toggleMenu(item.id)}
+                        >
+                          <div className="icon">
+                            {Icon && <Icon size={20} />}
+                            
+                          </div>
+
+
+
+                          {/* {isOpen &&(  */}
+                          <motion.span
+                            variants={{
+                              hidden: { opacity: 0, x: -80 },
+                              visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: index * 0.2 } }
+                            }}
+                            initial="hidden"
+                            animate={isOpen ? "visible" : "hidden"}
                           >
-                            <div className="icon">
-                              {Icon && <Icon size={20} />}
-                            </div>
-
-
-
-                            {/* {isOpen &&(  */}
-                            <motion.span
-                              variants={{
-                                hidden: { opacity: 0, x: -80 },
-                                visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: index * 0.2 } }
-                              }}
-                              initial="hidden"
-                              animate={isOpen ? "visible" : "hidden"}
-                            >
-                              <div>{item.caption}</div>
-                              {item.children?.length > 0 && (
-                                <MdKeyboardArrowDown
-                                  size={18}
-                                  style={{
-                                    marginLeft: "auto",
-                                    transition: "0.3s",
-                                    transform: openMenu === item.id ? "rotate(180deg)" : "rotate(0deg)",
-                                  }}
-                                />
-                              )}
-
-                            </motion.span>
-
-                            {/* )} */}
-                          </NavLink>
-                          <AnimatePresence>
-                            {item.children?.length > 0 && openMenu === item.id && (
-                              <motion.div
-
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0, y: -100 }}
-                                transition={{ duration: 0.5 }}
-                                className="submenu"
-                              >
-                                {item.children.map((child) => (
-                                  <motion.li key={child.id}  >
-                                    <NavLink className={`Li-always Li-always-sub ${isOpen ? "Li-b" : "li-a"}`} to={child.url}>
-                                      <div className="icon">
-                                        {Icon && <Icon size={20} />}
-                                      </div>
-                                      <motion.span
-                                        variants={{
-                                          hidden: { opacity: 0, x: -80 },
-                                          visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: 0.1 } }
-                                        }}
-                                        initial="hidden"
-                                        animate={isOpen ? "visible" : "hidden"}
-                                      >
-                                        {child.caption}
-                                      </motion.span>
-
-
-                                    </NavLink>
-                                  </motion.li>
-                                ))}
-                              </motion.div>
+                            <div>{item.caption}</div>
+                            {item.children?.length > 0 && (
+                              <MdKeyboardArrowDown
+                                size={18}
+                                style={{
+                                  marginLeft: "auto",
+                                  transition: "0.3s",
+                                  transform: openMenu === item.id ? "rotate(180deg)" : "rotate(0deg)",
+                                }}
+                              />
                             )}
-                          </AnimatePresence>
-                        </motion.li>
 
-                      )
-                    })
-                  
+                          </motion.span>
+
+                          {/* )} */}
+                        </NavLink>
+                        <AnimatePresence>
+                          {item.children?.length > 0 && openMenu === item.id && (
+                            <motion.div
+
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: "auto", opacity: 1 }}
+                              exit={{ height: 0, opacity: 0, y: -100 }}
+                              transition={{ duration: 0.5 }}
+                              className="submenu"
+                            >
+                              {item.children.map((child) => (
+                                <motion.li key={child.id}  >
+                                  <NavLink className={`Li-always Li-always-sub ${isOpen ? "Li-b" : "li-a"}`} to={child.url}>
+                                    <div className="icon">
+                                      {Icon && <Icon size={20} />}
+                                    </div>
+                                    <motion.span
+                                      variants={{
+                                        hidden: { opacity: 0, x: -80 },
+                                        visible: { opacity: 1, x: 0, transition: { duration: 0.2, delay: 0.1 } }
+                                      }}
+                                      initial="hidden"
+                                      animate={isOpen ? "visible" : "hidden"}
+                                    >
+                                      {child.caption}
+                                    </motion.span>
+
+
+                                  </NavLink>
+                                </motion.li>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.li>
+
+                    )
+                  })
+
                 }
               </motion.ul>
             </nav>
@@ -276,11 +280,7 @@ const DashboardLayout = () => {
         <main className={`main-content  p-0`}>
 
           <div className='main2'>
-            <div className='main-top'>
-              {/* <h3>MAKKAYS TimeFlow</h3> */}
-              <h3>MAKKAYS TimeLogix </h3>
-              <ThemeToggle />
-            </div>
+            <Header/>
             <div className='main3'>
 
               <AnimatePresence mode="wait"

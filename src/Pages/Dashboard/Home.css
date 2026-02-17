@@ -1,39 +1,13 @@
-body.light {
-    --onground: linear-gradient(126deg, rgb(184, 206, 215) 38%, rgba(181, 181, 181, 0.1) 100%);
-    --onground2: rgb(27, 35, 45);
-    --ground: aliceblue;
-    --text-color: rgb(0, 41, 54);
-    --secondary-color: rgba(240, 248, 255, 0.292);
-    --theme-color: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815));
-    --border-color: rgba(128, 128, 128, 0.747);
-    /* --ant-segmented-item-selected-bg: #000000 !important; */
-    /* --theme-color-secondary: linear-gradient(45deg, rgba(0, 167, 255, 0.5), rgba(0, 255, 167, 0.4)); */
-    /* --secondry : linear-gradient(135deg, rgba(red), rgba(var(yellow), rgba(blue, .75)) */
-}
 
-/* index.css ya App.css */
-/* index.css */
-body.dark {
-    --ground: rgb(19, 25, 32);
-    --onground: rgb(27, 35, 45);
-    --onground2: aliceblue;
-    --text-color: aliceblue;
-    --mini-heading-color: rgb(156, 156, 156);
-    --secondary-color: rgba(255, 255, 255, 0.1);
-    --theme-color: linear-gradient(45deg, rgba(0, 100, 200, 0.9), rgba(90, 0, 200, 0.8));
-    --theme-color2: linear-gradient(45deg, rgba(0, 100, 200, 0.34), rgba(90, 0, 200, 0.466));
-    --border-color: rgba(139, 139, 139, 0.775);
-    /* --ant-segmented-item-selected-bg: #ffffff !important; */
-    /* --theme-color-secondary: linear-gradient(45deg, rgba(0, 100, 200, 0.5), rgba(0, 255, 150, 0.4)) */
-}
 
 /* .css-var-root.ant-segmented{
     background-color: var(--secondary-color);
 } */
 
 .ant-segmented {
-    background: var(--theme-color);
+    background: var(--theme-color-light);
     color: var(--text-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 /* .ant-segmented-item-selected{
@@ -249,4 +223,5 @@ body.dark {
 
 .cards .module:hover {
     transform: scale(1.1);
+    transform: translateY(-10px);
 }

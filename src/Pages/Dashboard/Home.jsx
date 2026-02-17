@@ -1,4 +1,4 @@
-import CalendarDash from '../../Components/Dashboard-Component/Calendar';
+// import CalendarDash from '../../Components/Dashboard-Component/Calendar';
 // import Calendar from '../../Components/Dashboard-Component/Calendar';
 import './Home.css';
 // import { motion,  } from 'framer-motion';
@@ -14,7 +14,7 @@ const Home = () => {
         </div>
       </div>
 
-      <CalendarDash/>
+      {/* <CalendarDash/> */}
       
       <div className='cards'>
         <div className='module'><h6>Attendance</h6></div>

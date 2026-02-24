@@ -7,7 +7,7 @@
 .ant-segmented {
     background: var(--theme-color-light);
     color: var(--text-color);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: var(--box-shadow-icon);
 }
 
 /* .ant-segmented-item-selected{
@@ -208,7 +208,7 @@
 .cards .module {
     width: 100%;
     height: 7rem;
-    border-radius: 5px;
+    border-radius: 4px;
     /* background-color: ; */
     cursor: pointer;
     color: aliceblue;

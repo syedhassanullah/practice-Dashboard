@@ -162,7 +162,7 @@ const DashboardLayout = () => {
               </div>
             </div>
             {/* <h2>Admin Panel</h2> */}
-            <nav>
+            <div className='nav-menu'>
               <motion.ul
                 key={Menu2.length}
                 variants={listVariants}
@@ -265,7 +265,7 @@ const DashboardLayout = () => {
 
                 }
               </motion.ul>
-            </nav>
+            </div>
 
             <div className='sub-icon'>
               <div className='sub-icon-in'>

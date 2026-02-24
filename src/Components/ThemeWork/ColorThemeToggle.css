@@ -6,7 +6,7 @@
     width: 350px;
     height: inherit;
     padding: 25px;
-    border-radius: 20px;
+    border-radius: 15px;
     /* border: 1px solid var(--border-color); */
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -21,10 +21,10 @@
 
 .theme-change-icon {
     color: var(--text-color);
-    height: 40px;
-    width: 40px;
+    height: 35px;
+    width: 35px;
     font-size: 15px;
-    border-radius: 100%;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,8 +32,9 @@
     position: relative;
     /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
     cursor: pointer;
-    transition: 0.3s ease all;
+    /* transition: 0.3s ease all; */
     /* border: 1px solid rgba(255, 255, 255, 0.214); */
+    
 }
 
 .theme-change-icon::after{
@@ -47,17 +48,17 @@
 
 /* 👇 Before gives glowing effect */
 .theme-change-icon::after {
-  background: var(--theme-color-dark);
-  border-radius: 100%;
+  /* background: var(--theme-color); */
+  border-radius: 5px;
   opacity: 0;
   left: -100;
-  transform: scale(0.3);
+  /* transform: scale(0.6); */
 }
 
 .theme-change-icon:hover::after {
   opacity: 1;
   transform: scale(1);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: var(--box-shadow-icon);
 }
 
 
@@ -70,6 +71,6 @@
 .select-theme .button {
     width: 45px;
     height: 45px;
-    border-radius: 100%;
+    border-radius: 5px;
     background:var(--theme-color-light) ;
 }

@@ -10,7 +10,7 @@ const Home = () => {
       <div className='main-top2'>
         <div className='main-top2-inner'>
          <div className='icon-links'><RiDashboardHorizontalFill/></div>
-         <div className='des-links'><h6>Dashbord</h6><p> Home / Dashboard</p></div>
+         <div className='des-links'><h5>Dashbord</h5><p> Home / Dashboard</p></div>
         </div>
       </div>
 

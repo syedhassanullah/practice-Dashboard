@@ -9,14 +9,14 @@ const Home = () => {
     <>
       <div className='main-top2'>
         <div className='main-top2-inner'>
-         <div className='icon-links'><RiDashboardHorizontalFill/></div>
-         <div className='des-links'><h5>Dashbord</h5><p> Home / Dashboard</p></div>
+          <div className='icon-links'><RiDashboardHorizontalFill /></div>
+          <div className='des-links'><h5>Dashbord</h5><p> Home / Dashboard</p></div>
         </div>
       </div>
 
       {/* <CalendarDash/> */}
-      
-      <div className='cards'>
+
+      {/* <div className='cards'>
         <div className='module'><h6>Attendance</h6></div>
         <div className='module'><h6>HR Managment</h6></div>
         <div className='module'><h6>Payroll Managment</h6></div>
@@ -43,6 +43,11 @@ const Home = () => {
         <div className='module'><h6>Hello</h6></div>
 
 
+      </div> */}
+      <div className='profile-dashboard'>
+        <div className='profile-top'>
+          
+        </div>
       </div>
 
     </>

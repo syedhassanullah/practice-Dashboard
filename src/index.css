@@ -8,6 +8,8 @@
 body {
   font-family: 'RobotoCustom', sans-serif;
   /* background: rgb(37, 37, 37); */
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -18,12 +20,12 @@ code {
 body.light {
     --onground: linear-gradient(126deg, rgba(184, 206, 215, 0.364) 38%, rgba(181, 181, 181, 0.1) 100%);
     --onground2: rgb(27, 35, 45);
-    --ground: rgb(237, 241, 243);
+    --ground: rgb(255, 255, 255);
     --color-red:red;
     --text-color: rgb(0, 41, 54);
     --secondary-color: rgb(76, 76, 76);
     /* --theme-color: linear-gradient(45deg, rgba(0, 166, 255, 0.89), rgba(0, 218, 116, 0.815)); */
-    --border-color: rgba(128, 128, 128, 0.747);
+    --border-color: rgba(128, 128, 128, 0.704);
     --box-shadow-icon: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
      /* --primary-color: #22c55e; */
     /* --ant-segmented-item-selected-bg: #000000 !important; */
@@ -34,15 +36,15 @@ body.light {
 /* index.css ya App.css */
 /* index.css */
 body.dark {
-    --ground: rgb(19, 25, 32);
-    --onground: rgb(27, 35, 45);
+    --ground: rgb(14, 19, 24);
+    --onground: rgb(30, 39, 50);
     --onground2: aliceblue;
     --text-color: aliceblue;
     --mini-heading-color: rgb(156, 156, 156);
     --secondary-color: rgb(139, 139, 139);
     
     --theme-color2: linear-gradient(45deg, rgba(0, 100, 200, 0.34), rgba(90, 0, 200, 0.466));
-    --border-color: rgba(139, 139, 139, 0.775);
+    --border-color: rgb(70, 80, 92);
     --box-shadow-icon:  rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(48, 48, 48, 0.3) 0px 8px 16px -8px;
     /* --ant-segmented-item-selected-bg: #ffffff !important; */
     /* --theme-color-secondary: linear-gradient(45deg, rgba(0, 100, 200, 0.5), rgba(0, 255, 150, 0.4)) */
@@ -69,8 +71,8 @@ body.red {
     rgba(139, 44, 255, 0.85)
   );
   --theme-color-light: linear-gradient(45deg,
-    rgba(255, 65, 108, 0.15),
-    rgba(139, 44, 255, 0.18)
+    rgba(255, 65, 109, 0.097),
+    rgba(139, 44, 255, 0.118)
   );
   transition: 0.3s ease all;
 }
@@ -81,8 +83,8 @@ body.yellow {
     rgba(0, 200, 83, 0.85)
   );
   --theme-color-light: linear-gradient(45deg,
-    rgba(249, 212, 35, 0.15),
-    rgba(0, 200, 83, 0.18)
+    rgba(249, 213, 35, 0.133),
+    rgba(0, 200, 83, 0.153)
   );
   transition: 0.3s ease all;
 }
@@ -94,7 +96,7 @@ body.purple {
     rgba(74, 0, 224, 0.85)
   );
   --theme-color-light: linear-gradient(45deg,
-    rgba(142, 45, 226, 0.15),
+    rgba(175, 45, 226, 0.15),
     rgba(74, 0, 224, 0.18)
   );
   transition: 0.3s ease all;

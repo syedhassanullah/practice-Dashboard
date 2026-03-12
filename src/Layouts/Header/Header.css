@@ -3,7 +3,7 @@
   height: 60px;
   /* background:linear-gradient(126deg, rgb(0, 33, 46) 38%,rgba(2, 53, 77, 1)  100%); */
   /* background:  linear-gradient(126deg, rgba(181, 181, 181, 0.367) 10%,rgb(165, 187, 196)  100%); */
-  background: var(--theme-color-light);
+  /* background: var(--theme-color-light); */
   /* border: 1px solid white; */
   position: relative;
   color: var(--text-color);
@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px 30px;
-  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 
 }
 

@@ -145,11 +145,12 @@ const DashboardLayout = () => {
         )}
       </AnimatePresence>
 
-      <div className='row m-0 p-0'>
+      
         {/* <div className={`m-0 p-0 ${isOpen ? 'active-sidebar' : ''}`}> */}
-        <aside className={`sidebar ${isOpen ? '' : 'sidebar-not-active'}`}>
+     
+        {/* <aside className={` ${isOpen ? 'sidebar' : 'sidebar-not-active'}`}> */}
 
-          <div className='sidebar-in'>
+          <div className={`sidebar ${isOpen ? 'sidebar-active' : 'sidebar-not-active'}`}>
             <div className={`hum ${isOpen ? 'humburger1' : 'humburger'}`}>
               <div className='Hamburger'>
                 <Hamburger
@@ -193,8 +194,8 @@ const DashboardLayout = () => {
                           onClick={() => item.children?.length && toggleMenu(item.id)}
                         >
                           <div className="icon">
-                            {Icon && <Icon size={20} />}
-                            
+                            {Icon && <Icon />}
+
                           </div>
 
 
@@ -230,13 +231,13 @@ const DashboardLayout = () => {
 
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: "auto", opacity: 1 }}
-                              exit={{ height: 0, opacity: 0, y: -100 }}
+                              exit={{ height: 0, opacity: 0, x: -100 }}
                               transition={{ duration: 0.5 }}
                               className="submenu"
                             >
                               {item.children.map((child) => (
                                 <motion.li key={child.id}  >
-                                  <NavLink className={`Li-always Li-always-sub ${isOpen ? "Li-b" : "li-a"}`} to={child.url}>
+                                  <NavLink className={`Li-always-sub ${isActive ? "active-li" : ""} ${isOpen ? "Li-b" : "li-a"}`} to={child.url}>
                                     <div className="icon">
                                       {Icon && <Icon size={20} />}
                                     </div>
@@ -273,16 +274,23 @@ const DashboardLayout = () => {
               </div>
             </div>
           </div>
-        </aside>
 
 
-        {/* </div> */}
+
+        {/* </aside> */}
+        {/* <div className='sidebar-submenu'>
+
+          </div> */}
+
+
         <main className={`main-content  p-0`}>
 
           <div className='main2'>
-            <Header/>
+            <Header />
             <div className='main3'>
+              {/* <div className={`sidebar-submenu ${isOpen ? '' : 'sidebar-submenu-not-active'}`}>
 
+              </div> */}
               <AnimatePresence mode="wait"
               >
                 <motion.div
@@ -309,8 +317,8 @@ const DashboardLayout = () => {
 
           </div>
         </main>
-      </div>
-    </div>
+        </div>
+ 
   );
 };
 

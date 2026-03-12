@@ -24,9 +24,11 @@ export default function AppRoutes() {
                 }
             >
                 <Route index element={<Home />} />
-                <Route path="profile" element={<Profile />} />
+                
                 <Route path="setting" element={<Settings />} />
+                <Route path="Userlist" element={<Profile />} />
             </Route>
+            
             <Route path="/" element={<Navigate to="/dashboard" replace />} />
             <Route path="*" element={<h2>404 - Not Found</h2>} />
 
